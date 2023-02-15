@@ -42,8 +42,8 @@ pre {
     transform-style: preserve-3d;
     transform: 
       perspective(5000px)
-      rotateY(20deg)
-      rotateX(20deg);
+      rotateY(var(--rotateY))
+      rotateX(var(--rotateX));
 }
 
 .selector {
@@ -73,9 +73,17 @@ pre::after {
     border-radius: inherit;
 }
 
+pre::before {
+    inset: 0.75rem;
+    background: black;
+    transform: translateZ(-49px);
+    filter: blur(15px);
+    opacity: 0.5;
+}
 /* gradient thingy */
 pre::after {
     inset: -1rem;
     background: 
       linear-gradient(-45deg, red, blue);
+      transform: translateZ(-50px);
 }
